@@ -36,7 +36,7 @@
     </main>
   </section>
 
-
+ <!-- navbar -->
   <nav class="navbar navbar-expand-md bg-body-transparent sticky-top mynavbar">
   <div class="container">
     <a class="navbar-brand" href="#">B&M</a>
@@ -50,16 +50,17 @@
       </div>
       <div class="offcanvas-body">
         <div class="navbar-nav ms-auto">
-        <a class="nav-link active" aria-current="home" href="#">Home</a>
+        <a class="nav-link active" href="#home">Home</a>
         <a class="nav-link" href="#info">Acara</a>
         <a class="nav-link" href="#gallery">Gallery</a> 
+        <a class="nav-link" href="#rsvp">rsvp</a>
       </div>
       </div>
     </div>
   </div>
 </nav>
 
-
+<!-- couple section -->
 <section id="home" class="home">
     <section id="home" class="home py-1">
   <div class="container">
@@ -106,6 +107,16 @@
   </div>
 </section>
 </section>
+
+
+
+
+<!--SECTION BARU--- TURUT MENGUNDANG -->
+
+
+
+
+
 <!-- information -->
 <section id="info" class="info">
   <div class="container">
@@ -113,8 +124,8 @@
       <div class="col-md-8 col-10 text-center">
         <h2>Informasi Acara</h2>
         <p class="alamat">Alamat: Rumah Bapak Eman Hurint, Hewuli, Alok Barat.</p>
-        <p2> Di Depan PT. Sumber Rejeki Berkah Lautan Indonesia, Sebelum Gereja St. Maria Magdalena, Nangahure, kalau dari arah Maumere, dan sesudah kalau dari Magepanda. </p2>
-
+        <p2> Di Depan PT. Sumber Rejeki Berkah Lautan Indonesia, Sebelum Gereja St. Maria Magdalena, Nangahure, kalau dari arah Maumere, dan sesudah kalau dari Magepanda. Untuk menuju lokasi, bisa menggunakan kendaraan pribadi atau ojek online. Jika menggunakan kendaraan pribadi, bisa parkir di halaman rumah atau di halaman gereja. </p2>
+          
 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3945.333175066359!2d122.16225628570557!3d-8.56392635666546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMzMnNDkuNSJTIDEyMsKwMDknNDguMyJF!5e0!3m2!1sid!2sid!4v1757016296862!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <a href="https://maps.app.goo.gl/sxnmYcXNvQ7oDBLp8" target="_blank" 
@@ -171,7 +182,7 @@
     </div>
   </div>
 </section>
-<!-- galery -->
+<!-- galery head -->
  <section id="gallery" class="gallery">
     <div class="container">
         <div class="row justify-content-center">
@@ -181,7 +192,6 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In alias est eos ab voluptate quae nam. </p>
             </div>
         </div>
-      </div>
       <!-- gallery -->
      <div class="container">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -236,6 +246,10 @@
     </div>
 
   </div>
+
+
+</div>
+
 </div>
  </section>
 
@@ -254,6 +268,54 @@
     </button>
   </div>
 </section>
+
+<!-- RSVP -->
+
+<section id="rsvp" class="rsvp">
+ <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-10 text-center">
+                <h2> Konfirmasi Kehadiran</h2>
+                <p>Isi form di bawah ini untuk mengkonfirmasi kehadiran</p>
+            </div>
+        </div>
+
+<!-- form -->
+<form class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+  method="POST" 
+  action=https://script.google.com/macros/s/AKfycbwK7nAD7R6U8dXJDisIzmHHEIs2HyLWY7NECXjJkHXzZc861bp3WOhz21q-tyghK9-y/exec id="my-form">
+
+  <div class="col-12">
+    <div class="mb-3">
+  <label for="nama" class="form-label">Nama</label>
+  <input type="text" class="form-control" id="nama" name="nama">
+</div>
+    </div>
+  <div class="col-12">
+    <div class="mb-3">
+  <label for="jumlah" class="form-label">Jumlah</label>
+  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="6" length="1" value="1">
+</div>
+    </div>
+  <div class="col-12">
+    <div class="mb-3">
+  <label for="status" class="form-label">Konfirmasi</label>
+  <select name="status" id="status" class="form-select">
+    <option selected>Pilih Salah Satu</option>
+    <option value="Hadir">Hadir</option>
+    <option value="Tidak Hadir">Tidak Hadir</option>
+  </select>
+</div>
+    </div>
+  <div class="col-12 text-left">
+    <button type="submit" class="btn btn-primary">Kirim</button>
+  </div>
+  </form>
+  </div>
+</section>
+
+
+
  <!-- footer -->
 
  <footer>
@@ -391,6 +453,24 @@
   const pronoun = urlParams.get('p') || 'Bapak, Ibu, Saudara/i';
   const nContainer = document.querySelector('.hero h4 span');
   nContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+</script>
+
+<script>
+  window.addEventListener("load", function() {
+  const form = document.getElementById('my-form');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Konfirmasi Kehadiran Berhasil Terkirim!");
+    })
+  });
+});
 </script>
 
 </body>
