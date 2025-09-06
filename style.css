@@ -325,12 +325,9 @@ background-color: #333 ;
     font-size: 0.6rem;
   }
     .sticky-top{
-    overflow: hidden;
-    }
-    .offcanvas-end {
-    width: 100% !important;
-    max-width: 100% !important;
+    overflow: hidden
     }
     
 }
+
 
