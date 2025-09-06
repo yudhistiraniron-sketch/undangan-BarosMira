@@ -325,15 +325,17 @@ background-color: #333 ;
     font-size: 0.6rem;
   }
     .sticky-top{
-    overflow: hidden
+    overflow: hidden;
     }
-
-  .mynavbar .nav-link{
-  font-size: 1.2rem;
-  text-align: center;
-}
-.sticky-top{
-    overflow: visible;
+    .offcanvas-end {
+    width: 100% !important;
+    max-width: 100% !important;
+    }
+    #offcanvasNavbar {
+    display: none !important;
+  }
+  .navbar-toggler {
+    display: none !important;
   }
 }
 
