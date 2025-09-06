@@ -331,11 +331,6 @@ background-color: #333 ;
     width: 100% !important;
     max-width: 100% !important;
     }
-    #offcanvasNavbar {
-    display: none !important;
-  }
-  .navbar-toggler {
-    display: none !important;
-  }
+    
 }
 
